@@ -21,15 +21,21 @@ class appendifuniqueTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAppend() {
+        self.measureBlock {
+            Benchmarks.testAppendIfUnique(50000)
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testArrayContains(){
         self.measureBlock {
-            // Put the code you want to measure the time of here.
+            Benchmarks.testArrayContains(60000)
+        }
+    }
+    
+    func testSet(){
+        self.measureBlock {
+            Benchmarks.testNumbersSetToArray(60000)
         }
     }
     
